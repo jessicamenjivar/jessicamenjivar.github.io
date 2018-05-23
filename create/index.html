@@ -1,0 +1,104 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script type="text/css">
+            // css goes here
+      canvas {
+    border: 1px solid black;
+}
+            
+        </script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+        <script type="text/javascript"/>
+            //java goes here
+            
+            let ballX;
+let ballY;
+let speedX;
+let speedY;
+let stripeWidth = 20; 
+
+function setup()
+{
+    createCanvas(400, 400);
+    ballX = width / 2;
+    ballY = height / 2;
+    speedX = random(-5, 5);
+    speedY = random(-5, 5);
+    
+}
+
+function draw()
+{
+     background(255);
+    stroke(0);
+    line(width / 2, 0, width / 2, height);
+    line(0, height / 2, width, height / 2);
+
+    
+   
+    noStroke();
+    fill(255, 0, 0);
+    ellipse(ballX, 200, 20, 20);
+    fill(34,245,0);
+    ellipse(200,ballY, 20,20);
+    fill(25,56,87);
+    ellipse (200,200,50);
+    fill(182, 4, 242);
+    ellipse (200,20,20);
+
+    // TODO: make the ball move using speedX and speedY
+    
+    ballX = ballX + speedX;
+    ballY = ballY + speedY;
+
+    // TODO: check the bottom boundary
+    
+     if(ballY > height) 
+    {
+       speedY = random(-5,5);
+}
+    // TODO: check the top boundary
+     if(ballY <= 0) 
+    {
+     speedY = 3;
+}
+    
+    // TODO: check the right boundary
+     if(ballX > width) 
+    {
+        speedX= -3;
+}
+
+    // TODO: check the left boundary
+     if(ballX <= 0) 
+  {
+    speedX= 3 ;
+  }
+    
+}
+
+function drawLine()
+{
+  line(200, 0, 200, 400);
+  line(0, 200, 400,200);
+}
+
+if (ballX === ballY)
+{
+    ballX= 0;
+    ballY= 0;
+}
+
+
+
+            
+        </script>
+        
+    </body>
+    
+    
+    
+</html>
